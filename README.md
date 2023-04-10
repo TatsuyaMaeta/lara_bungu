@@ -114,3 +114,10 @@ php artisan db:seed --class=JotaisSeeder
 php artisan make:model Jotai
 ```
 
+
+デバッグ用ツール
+```
+composer require barryvdh/laravel-debugbar --dev
+```
+URL: 
+https://qiita.com/goto_smv/items/b7be0985029ab3d03217

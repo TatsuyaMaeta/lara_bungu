@@ -75,8 +75,6 @@ Route::get('/juchus/create', [JuchuController::class, "create"])
     ->name('juchus.create')
     ->middleware('auth');
 
-
-
 Route::post('/juchus/store/', [JuchuController::class, "store"])
     ->name('juchus.store')
     ->middleware('auth');
