@@ -56,7 +56,7 @@ php artisan migrate:refresh --step=1 --path=database/migrations/2023_04_10_09403
     ※modelは大文字なので注意(Class名は大文字から始まる)
 
 
-
+<br>
 
 1. 
     テーブル作成用のmigrationファイル作成
@@ -91,6 +91,7 @@ php artisan migrate:refresh --step=1 --path=database/migrations/2023_04_10_09403
 
 
 
+<br>
 
 1. 状態テーブル作成のためのmigration
     ```
