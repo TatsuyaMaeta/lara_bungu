@@ -35,6 +35,12 @@ class RouteServiceProvider extends ServiceProvider
 
             Route::middleware('web')
                 ->group(base_path('routes/web.php'));
+
+            // 下記を追記
+            // https://qiita.com/miriwo/items/1e81d668843dcfa38a5d
+            Route::middleware('web')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/test.php'));
         });
     }
 
@@ -49,4 +55,5 @@ class RouteServiceProvider extends ServiceProvider
             return Limit::perMinute(60)->by($request->user()?->id ?: $request->ip());
         });
     }
+
 }
