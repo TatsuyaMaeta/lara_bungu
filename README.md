@@ -4,7 +4,18 @@
 
 ID hogehoge@hoge.com
 pass qwerty123 
+---
+ID hanako@hanako
+pass qwerty123
+---
 
+## 頻繁に触るファイル
+1. database/migrations/DATE_create_bunbougus_table.php
+2. database/seeders/BunruisSeeder.php
+3. app/Http/Controllers/BunbouguController.php
+4. app/Models/Bunbougu.php
+5. routes/web.php
+6. resources/views/welcome.blade.php
 
 
 誰が商品登録をしたかのカラムをbunbougusテーブルに追加するためのmigrationファイルを作成する(このファイルで何を追加したいのかをadd_user_id_to_bunbougus.phpのマイグレーションふぁいるのupに記述する)
