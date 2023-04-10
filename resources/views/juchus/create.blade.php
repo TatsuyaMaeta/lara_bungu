@@ -17,7 +17,7 @@
     <form action="{{ route('juchus.store') }}" method="POST">
         @csrf
         <div class="row">
-            <div class="col-12 mb-2 mt-2 mb-2">
+            <div class="col-12 mt-2 mb-2">
                 <div class="form-group">
                     <select name="kyakusaki_id" class="form-select">
                         <option>客先を選択してください</otion>
@@ -30,7 +30,7 @@
                     @enderror
                 </div>
             </div>
-            <div class="col-12 mb-2 mt-2 mb-2">
+            <div class="col-12 mt-2 mb-2">
                 <div class="form-group">
                     <select name="bunbougu_id" class="form-select">
                         <option>文房具を選択してください</otion>

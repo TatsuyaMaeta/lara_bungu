@@ -28,7 +28,8 @@
             </div>
             <div class="col-12 mb-2 mt-2">
                 <div class="form-group">
-                    <input value="{{ $bunbougu->kakaku }}" type="text" name="kakaku" class="form-control" placeholder="価格">
+                    <input value="{{ $bunbougu->kakaku }}" type="text"
+                        name="kakaku" class="form-control" placeholder="価格">
                 </div>
                 @error("kakaku")
                 <span style="color:red;">価格を入力してください</span>
@@ -57,7 +58,9 @@
 
             <div class="col-12 mb-2 mt-2">
                 <div class="form-group">
-                    <textarea class="form-control" style="height:100px" name="shosai" placeholder="詳細">{{ $bunbougu->shosai }}</textarea>
+                    <textarea class="form-control" style="height:100px"
+                        name="shosai" placeholder="詳細">{{ $bunbougu->shosai }}
+                    </textarea>
                 </div>
                 @error("shosai")
                 <span style="color:red;">詳細を140文字以内で入力してください</span>

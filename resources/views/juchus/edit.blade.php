@@ -19,12 +19,18 @@
         @csrf
 
         <div class="row">
-            <div class="col-12 mb-2 mt-2 mb-2">
+            <div class="col-12 mt-2 mb-2">
                 <div class="form-group">
                     <select name="kyakusaki_id" class="form-select">
                         <option>客先を選択してください</otion>
                             @foreach ($kyakusakis as $kyakusaki)
-                        <option value="{{ $kyakusaki->id }}" @if($kyakusaki->id==$juchu->kyakusaki_id) selected @endif>{{ $kyakusaki->name }}</otion>
+                        <option value="{{ $kyakusaki->id }}"
+                            @if($kyakusaki->id==$juchu->kyakusaki_id)
+                                selected
+                            @endif
+                        >
+                            {{ $kyakusaki->name }}
+                        </otion>
                             @endforeach
                     </select>
                     @error('kyakusaki_id')
@@ -32,16 +38,15 @@
                     @enderror
                 </div>
             </div>
-            <div class="col-12 mb-2 mt-2 mb-2">
+            <div class="col-12 mt-2 mb-2">
                 <div class="form-group">
                     <select name="bunbougu_id" class="form-select">
                         <option>文房具を選択してください</otion>
                             @foreach ($bunbougus as $bunbougu)
-                            <option value="{{ $bunbougu->id }}"
-                                @if($bunbougu->id==$juchu->bunbougu_id)
-                                selected
-                                @endif>
-                                {{ $bunbougu->name }}
+                        <option value="{{ $bunbougu->id }}" @if($bunbougu->id==$juchu->bunbougu_id)
+                            selected
+                            @endif>
+                            {{ $bunbougu->name }}
                             </otion>
                             @endforeach
                     </select>
