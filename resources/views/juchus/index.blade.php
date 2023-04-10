@@ -12,7 +12,7 @@
 
         <div class="text-right">
             @auth
-            <a href="{{ route('bunbougu.create') }}" class="btn btn-success">新規登録</a>
+            <a href="{{ route('juchus.create') }}" class="btn btn-success">新規登録</a>
             @endauth
         </div>
     </div>
@@ -37,42 +37,47 @@
 
 <table class="table table-bordered">
     <tr>
-        <th>No</th>
-        <th>name</th>
-        <th>kakaku</th>
-        <th>bunrui</th>
-        <th>edit</th>
-        <th>delete</th>
-        <th>add user</th>
+        <th>ID</th>
+        <th>客先</th>
+        <th>文房具</th>
+        <th>個数</th>
+        <th>状態</th>
+        @auth
+        <th>編集</th>
+        <th>削除</th>
+        <th>編集者</th>
+        @endauth
 
     </tr>
-    @foreach ($bunbougus as $bunbougu)
+    @foreach ($juchus as $juchu)
     <tr>
-        <td style="text-align:right">{{ $bunbougu->id }}</td>
-        <td><a href="{{ route('bunbougu.show',$bunbougu->id) }}?page_id={{ $page_id }}">{{ $bunbougu->name }}</a></td>
-
-        <td style="text-align:right">{{ $bunbougu->kakaku }}円</td>
-        <td style="text-align:right">{{ $bunbougu->bunrui }}</td>
+        <td style="text-align:right">{{ $juchu->id }}</td>
+        <td style="text-align:right">{{ $juchu->kyakusaki_name }}</td>
+        <td style="text-align:right">{{ $juchu->bunbougu_name }}</td>
+        <td style="text-align:right">{{ $juchu->kosu }}</td>
+        <td style="text-align:right">{{ $juchu->jotai }}</td>
+        @auth
         <td style="text-align:center">
-            @auth
-            <a class="btn btn-primary btn-sm" href="{{ route('bunbougu.edit',$bunbougu->id) }}">変更</a>
-            @endauth
+            <a class="btn btn-primary btn-sm" href="{{ route('juchus.edit',$juchu->id) }}">変更</a>
         </td>
+        @endauth
+        @auth
         <td style="text-align:center">
-            @auth
-            <form action="{{ route('bunbougu.destroy',$bunbougu->id) }}" method="POST">
+            <form action="{{ route('juchu.destroy',$juchu->id) }}" method="POST">
                 @csrf
                 @method("DELETE")
                 <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('削除しますか？');">削除</button>
             </form>
-            @endauth
         </td>
-        <td>{{ $bunbougu->user_name }}
-
+        @endauth
+        @auth
+        <td>
+            {{ $juchu->user_name }}
         </td>
+        @endauth
     </tr>
     @endforeach
 </table>
 
-{!! $bunbougus->links('pagination::bootstrap-5') !!}
+{!! $juchus->links('pagination::bootstrap-5') !!}
 @endsection

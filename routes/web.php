@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\BunbouguController;
+use App\Http\Controllers\JuchuController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,8 +16,9 @@ use App\Http\Controllers\BunbouguController;
 |
 */
 
-Route::get('/', 'App\Http\Controllers\BunbouguController@index')
-    ->name('bunbougus.index');
+Route::get('/', function () {
+    return (view('welcome'));
+});
 
 
 Route::get('/dashboard', function () {
@@ -36,19 +38,23 @@ require __DIR__ . '/auth.php';
 Route::get('/bunbougus', 'App\Http\Controllers\BunbouguController@index')
     ->name('bunbougus.index');
 
-Route::get("/bunbougus/create", "App\Http\Controllers\BunbouguController@create")
-    ->name("bunbougu.create");
+// Route::get("/bunbougus/create", "App\Http\Controllers\BunbouguController@create")
+Route::get("/bunbougus/create", [BunbouguController::class, 'create'])
+    ->name("bunbougu.create")
+    ->middleware('auth');
 
 Route::post("/bunbougus/store/", "App\Http\Controllers\BunbouguController@store")
-    ->name("bunbougu.store");
-
+    ->name("bunbougu.store")
+    ->middleware('auth');
 
 
 Route::get("/bunbougus/edit/{bunbougu}", "App\Http\Controllers\BunbouguController@edit")
-    ->name("bunbougu.edit");
+    ->name("bunbougu.edit")
+    ->middleware('auth');
 
 Route::put("/bunbougus/edit/{bunbougu}", "App\Http\Controllers\BunbouguController@update")
-    ->name("bunbougu.update");
+    ->name("bunbougu.update")
+    ->middleware('auth');
 
 
 Route::get("/bunbougus/show/{bunbougu}", "App\Http\Controllers\BunbouguController@show")
@@ -56,4 +62,34 @@ Route::get("/bunbougus/show/{bunbougu}", "App\Http\Controllers\BunbouguControlle
 
 
 Route::delete("/bunbougus/{bunbougu}", "App\Http\Controllers\BunbouguController@destroy")
-    ->name("bunbougu.destroy");
+    ->name("bunbougu.destroy")
+    ->middleware('auth');
+
+
+
+// 受注ページへのルーティング
+Route::get("/juchus", "App\Http\Controllers\JuchuController@index")
+    ->name("juchus.index");
+
+Route::get('/juchus/create', [JuchuController::class, "create"])
+    ->name('juchus.create')
+    ->middleware('auth');
+
+
+
+Route::post('/juchus/store/', [JuchuController::class, "store"])
+    ->name('juchus.store')
+    ->middleware('auth');
+
+
+Route::get('/juchus/edit/{juchu}', [JuchuController::class, "edit"])
+    ->name('juchus.edit')
+    ->middleware('auth');
+
+Route::put('/juchus/edit/{juchu}', [JuchuController::class, "update"])
+    ->name('juchu.update')
+    ->middleware('auth');
+
+Route::delete('/juchus/{juchu}', [JuchuController::class, "destroy"])
+    ->name('juchu.destroy')
+    ->middleware('auth');
