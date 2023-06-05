@@ -9,6 +9,16 @@ ID hanako@hanako
 pass qwerty123
 ---
 
+git cloneして使用する場合はseederファイルをdbに反映させて使用してください
+
+``` terminal:terminal
+php artisan db:seed --class=JuchusSeeder 
+php artisan db:seed --class=KyakusakisSeeder
+php artisan db:seed --class=JotaisSeeder 
+php artisan db:seed --class=BunruisSeeder
+```
+
+
 ## 頻繁に触るファイル
 1. database/migrations/DATE_create_bunbougus_table.php
 2. database/seeders/BunruisSeeder.php
