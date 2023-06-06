@@ -9,6 +9,10 @@ ID taro@taro.jp
 pass qwerty123
 ---
 
+### demo top page
+![demo page](https://user-images.githubusercontent.com/64568445/243629081-3d24ff1f-8028-42d0-95fb-0fca939fd1fc.png)
+
+
 git cloneして使用する場合はseederファイルをdbに反映させて使用してください
 
 ``` terminal:terminal
@@ -148,3 +152,7 @@ composer require barryvdh/laravel-debugbar --dev
 ```
 URL: 
 https://qiita.com/goto_smv/items/b7be0985029ab3d03217
+
+
+readmeに画像を埋め込む方法
+https://qiita.com/r_midori/items/2c4feb5de05535441bc8
