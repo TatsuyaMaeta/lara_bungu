@@ -2,20 +2,25 @@
 ### URL: https://www.youtube.com/watch?v=rHf-PYfJ2lU&t
 ### 参考記事: https://chikaraemon.com/wordpress/2022/08/10/laravel9_20220809/
 
-ID hogehoge@hoge.com
+ID hanaco@hanaco.jp
 pass qwerty123 
 ---
-ID hanako@hanako
+ID taro@taro.jp
 pass qwerty123
 ---
 
 git cloneして使用する場合はseederファイルをdbに反映させて使用してください
 
 ``` terminal:terminal
+# .envのDB_DATABASE名のDBを作成後にテーブルをmigrate
+php artisan migrate
+
+初期設定のデータをテーブル5つ下記のseederで設定する
 php artisan db:seed --class=JuchusSeeder 
 php artisan db:seed --class=KyakusakisSeeder
 php artisan db:seed --class=JotaisSeeder 
 php artisan db:seed --class=BunruisSeeder
+php artisan db:seed --class=UsersSeeder
 ```
 
 
