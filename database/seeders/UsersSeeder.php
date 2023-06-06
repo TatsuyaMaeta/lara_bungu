@@ -35,6 +35,15 @@ class UsersSeeder extends Seeder
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => null,
             ],
+            [
+                'name' => "kenji",
+                'email' => "kenji@kenji.jp",
+                'email_verified_at' => null,
+                'password' => '$2y$10$jmaqlnXv9MejaOKTId6hL.kA..GJioCpITm9NgHEogm7ge49hJT5q',
+                'remember_token' => null,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => null,
+            ],
         ]);
     }
 }

@@ -17,12 +17,13 @@ class BunbouguFactory extends Factory
     public function definition()
     {
         return [
-            "name" => $this->faker->realText(10),
+            "name"   => $this->faker->realText(10),
             "kakaku" => $this->faker->numberBetween($min = 50, $max = 999),
             "bunrui" => $this->faker->numberBetween($min = 1, $max = 3),
             "shosai" => $this->faker->realText(50),
-            "created_at" => date("Y-m-d H:i:s"),
-            "updated_at" => null,
+            "created_at"    => date("Y-m-d H:i:s"),
+            "updated_at"    => null,
+            "user_id"       => $this->faker->numberBetween($min = 1, $max = 3),
         ];
     }
 }
