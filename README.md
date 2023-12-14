@@ -25,6 +25,7 @@ php artisan db:seed --class=KyakusakisSeeder
 php artisan db:seed --class=JotaisSeeder 
 php artisan db:seed --class=BunruisSeeder
 php artisan db:seed --class=UsersSeeder
+php artisan db:seed --class=BunbougusSeeder
 ```
 
 
